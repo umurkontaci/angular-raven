@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="ravenTest">
+<head>
+    <!--Vendor Scripts-->
+    <script type="text/javascript" src="../vendor/angular.min.js"></script>
+    <script type="text/javascript" src="../vendor/raven.min.js"></script>
+    <!--Raven Script-->
+    <script type="text/javascript" src="../angular-raven.js"></script>
+    <script type="text/javascript" src="test.js"></script>
+    <title>Angular Raven Test Page</title>
+</head>
+<body ng-controller="TestController">
+    User Name: <input type="text" ng-model="user.name" />
+    User Id: <input type="text" ng-model="user.id" />
+
+    Message: <input ng-model="message" type="text" />
+    <input type="button" value="Send Message to Raven" ng-click="sendMessageToRaven()">
+    <input type="button" value="Throw it as Error" ng-click="throwError()">
+    <input type="button" value="Remove User" ng-click="user = null">
+</body>
+</html>
