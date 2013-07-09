@@ -23,7 +23,7 @@ Set Up
 3. Configure your Raven Url.
 ```
     angular.module("yourModule", ["angular-raven"])
-    }).value("RavenConfig", {
+        .value("RavenConfig", {
             ravenUrl: "http://yourravenhash@yourdomain.com/1" // this should be your raven endpoint URL
     }); 
 ```
