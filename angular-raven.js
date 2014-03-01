@@ -28,7 +28,8 @@
     ngRaven.config(["$provide", function ($provide) {
         $provide.decorator("$exceptionHandler", ["RavenConfig", "$delegate", function (cfg, del) {
             if (!cfg) { throw new Error("Raven config must be set before using this"); }
-            Raven.config(cfg.ravenUrl).install();
+            cfg.options = cfg.options || {};
+            Raven.config(cfg.ravenUrl, cfg.options).install();
             return function (ex, cause) {
                 del(ex, cause);
                 Raven.captureException(ex, cause);
