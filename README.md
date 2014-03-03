@@ -30,3 +30,19 @@ Set Up
 4. Deploy to your server, and play with it.
 
 5. See testclient/index.html for a working one.
+
+Options
+=======
+GetSentry provides the possibility to add additional options to your Raven
+config, such as `whitelistUrls`. These options can be submitted using the
+`options` key in the config object.
+
+```
+    angular.module("yourModule", ["angular-raven"])
+        .value("RavenConfig", {
+            ravenUrl: "http://yourravenhash@yourdomain.com/1", // this should be your raven endpoint URL
+            options: {
+                whitelistUrls: ['example.com/scripts/']
+            }
+    });
+```
